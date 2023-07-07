@@ -1,10 +1,11 @@
-const counterValue = 0;
+let counterValue = 0;
 const valueEl = document.getElementById("value");
 const incrementBtn = document.querySelector('[data-action="increment"]');
 const decrementBtn = document.querySelector('[data-action="decrement"]');
 
 function updateCounter(value) {
   valueEl.textContent = value;
+  counterValue = value; // Оновити значення лічильника
 }
 
 incrementBtn.addEventListener("click", () => {
@@ -19,3 +20,4 @@ decrementBtn.addEventListener("click", () => {
 
 // Оновити значення лічильника при завантаженні сторінки
 updateCounter(counterValue);
+
