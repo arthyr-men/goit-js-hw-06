@@ -8,10 +8,7 @@ const ingredients = [
 ];
 const ul = document.querySelector("#ingredients"); // Вибираємо список ul за його id
 
-// Проходимо по кожному елементу масиву ingredients
-ingredients.forEach((ingredient) => {
-  const li = document.createElement("li"); // Створюємо елемент <li>
-  li.textContent = ingredient; // Додаємо текстовий вміст з назвою інгредієнта
-  li.classList.add("item"); // Додаємо клас "item"
-  ul.appendChild(li); // Додаємо елемент <li> до списку <ul>
-});
+// Створюємо розмітку зі списком інгредієнтів
+const markup = ingredients.map(ingredient => `<li class="item">${ingredient}</li>`).join("");
+
+ul.insertAdjacentHTML("beforeend", markup); // Вставляємо розмітку у список ul
